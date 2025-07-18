@@ -8,7 +8,7 @@ import TechStack from "./components/TechStack";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import CodingProfiles from "./components/CodingProfiles";
-import GitHub from "./components/GitHub";
+import Github from "./components/Github";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -24,7 +24,7 @@ function App() {
       <Services />
       <Projects />
       <CodingProfiles />
-      <GitHub />
+      <Github />
       <Contact />
       <Footer />
     </div>
