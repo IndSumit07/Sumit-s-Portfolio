@@ -1,147 +1,267 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
   FaEnvelope,
   FaHeart,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaTwitter,
+  FaDiscord,
+  FaWhatsapp,
+  FaArrowUp,
 } from "react-icons/fa";
 
 const Footer = () => {
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    // Generate random positions for flickering stars
+    const newStars = [];
+    for (let i = 0; i < 40; i++) {
+      newStars.push({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 2 + 1,
+        delay: Math.random() * 3,
+      });
+    }
+    setStars(newStars);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative py-20 overflow-hidden bg-black border-t border-gray-800">
+      {/* Flickering Stars Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute rounded-full bg-white animate-flicker"
+            style={{
+              left: `${star.x}%`,
+              top: `${star.y}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              animationDelay: `${star.delay}s`,
+              filter: "drop-shadow(0 0 2px rgba(255,255,255,0.8))",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              Sumit Kumar
-            </h3>
-            <p className="text-gray-400 mb-4 leading-relaxed">
-              Professional Coder & Video Editor passionate about creating
-              innovative solutions and compelling visual content. Currently
-              pursuing Computer Science at GLA University.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300">
-                <FaGithub className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                <FaLinkedin className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-pink-400 transition-colors duration-300">
-                <FaInstagram className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors duration-300">
-                <FaEnvelope className="text-xl" />
-              </a>
+            <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
+              <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+                Sumit Kumar
+              </h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Computer Science Student at GLA University passionate about
+                problem-solving, development, and creating innovative solutions.
+                Combining academic knowledge with practical experience to build
+                exceptional digital experiences.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-gray-400">
+                  <FaMapMarkerAlt className="mr-3" />
+                  <span>GLA University, Mathura, India</span>
+                </div>
+                <div className="flex items-center text-gray-400">
+                  <FaEnvelope className="mr-3" />
+                  <span>sumit.kumar@gla.ac.in</span>
+                </div>
+                <div className="flex items-center text-gray-400">
+                  <FaPhone className="mr-3" />
+                  <span>+91 XXXXX XXXXX</span>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaGithub className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaLinkedin className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaInstagram className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaTwitter className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaDiscord className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="#"
+                  className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-all duration-300 group">
+                  <FaWhatsapp className="text-white text-xl group-hover:scale-110 transition-transform duration-300" />
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#home"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg border border-gray-800 h-full">
+              <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#home"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#education"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Education
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#skills"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Skills
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Web Development
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Video Editing
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Mobile Apps
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Consulting
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Custom Solutions
-                </a>
-              </li>
-            </ul>
+            <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg border border-gray-800 h-full">
+              <h4 className="text-xl font-bold mb-6 text-white">Services</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Web Development
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Video Editing
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Mobile Apps
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Cloud Solutions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Consulting
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:translate-x-1 transform block">
+                    Custom Development
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <hr className="border-gray-800 my-8" />
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+              <p className="text-gray-400 text-sm mb-2 md:mb-0 md:mr-6">
+                © 2025 Sumit Kumar. All rights reserved.
+              </p>
+              <p className="text-gray-400 text-sm flex items-center">
+                Made with{" "}
+                <FaHeart className="text-gray-500 mx-1 animate-pulse" /> by a
+                passionate developer
+              </p>
+            </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 Sumit Kumar. All rights reserved.
-          </p>
-          <p className="text-gray-400 text-sm flex items-center">
-            Made with <FaHeart className="text-red-500 mx-1" /> by Sumit Kumar
-          </p>
+            {/* Back to Top Button */}
+            <button
+              onClick={scrollToTop}
+              className="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg transition-all duration-300 flex items-center group">
+              <FaArrowUp className="mr-2 group-hover:-translate-y-1 transition-transform duration-300" />
+              <span className="text-sm">Back to Top</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-8 text-center">
+          <div className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg border border-gray-800 max-w-2xl mx-auto">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Currently pursuing Computer Science Engineering at GLA University.
+              Open to internships, freelance projects, and collaborative
+              opportunities. Let's build something amazing together!
+            </p>
+          </div>
         </div>
       </div>
     </footer>
