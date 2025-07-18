@@ -32,3 +32,21 @@ body {
   font-style: normal;
   font-display: swap;
 }
+/* Flickering Stars Animation */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-flicker {
+  animation: flicker 2s infinite ease-in-out;
+}
+
+/* Removed all shooting star CSS animations */

@@ -2,27 +2,33 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import Skills from "./components/Skills";
+import TechStack from "./components/TechStack";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
+import CodingProfiles from "./components/CodingProfiles";
+import GitHub from "./components/GitHub";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-const App = () => {
+function App() {
   return (
-    <div className="w-full min-h-[100vh] h-auto">
-      <div className="w-full h-auto min-h-[100vh] py-5 px-5 md:px-20 ">
-        <Navbar />
-        <Hero />
-      </div>
-      <hr className="w-full border-[2px] px-20" />
+    <div className="bg-gray-900 text-white min-h-screen">
+      <Navbar />
+      <Hero />
       <About />
-      <hr className="w-full border-[2px] px-20" />
+      <Education />
       <Skills />
-      <hr className="w-full border-[2px] px-20" />
+      <TechStack />
       <Services />
-      <hr className="w-full border-[2px] px-20" />
       <Projects />
+      <CodingProfiles />
+      <GitHub />
+      <Contact />
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;

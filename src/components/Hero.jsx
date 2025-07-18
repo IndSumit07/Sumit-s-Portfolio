@@ -1,47 +1,112 @@
-import React from "react";
-import heroImg from "../../public/heroImg.png";
+import React, { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaInstagram, FaDownload } from "react-icons/fa";
+import sumit from "../../public/sumit.jpg";
 const Hero = () => {
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    // Generate random positions for flickering stars
+    const newStars = [];
+    for (let i = 0; i < 80; i++) {
+      newStars.push({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 2 + 1,
+        delay: Math.random() * 3,
+      });
+    }
+    setStars(newStars);
+  }, []);
+
   return (
-    <div className="py-10 xl:py-20 h-auto w-full min-h-[calc(100vh-100px)] flex xl:flex-row flex-col-reverse">
-      <div className="xl:w-1/2 w-full h-auto pr-5 text-center xl:text-start">
-        <h3 className="font-[nebula] sm:text-7xl text-4xl tracking-tighter">
-          Designer.
-        </h3>
-        <h3 className="font-[nebula] sm:text-7xl text-4xl tracking-tighter">
-          Developer.
-        </h3>
-        <h3 className="font-[nebula] sm:text-7xl text-4xl tracking-tighter">
-          Deployer.
-        </h3>
-        <p className="font-[poppins] text-justify  text-md font-medium mt-10">
-          "I’m Sumit Kumar — a designer with vision, a developer with precision,
-          and a deployer with execution. I transform ideas into immersive
-          digital experiences, blending creative design with clean code and
-          scalable deployment. From crafting intuitive UIs to building
-          rock-solid backends and launching to the cloud — I do it all, end to
-          end."
-        </p>
-        <div className="mt-10 flex gap-5 xl:flex xl:justify-start justify-center items-center">
-          <div className="w-[150px] md:w-[200px] h-[50px] rounded-full bg-[#111113] border border-white/10 flex justify-center items-center px-5 text-md md:text-xl cursor-pointer relative group overflow-hidden">
-            <div className="w-0 h-full absolute left-0 bg-white group-hover:w-full top-0 hover:w-full transition-all duration-500 z-0"></div>
-            <span className="relative z-10 group-hover:text-black transition-all duration-500 font-semibold">
-              Get in Touch
-            </span>
+    <section
+      id="home"
+      className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-black">
+      {/* Flickering Stars Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute rounded-full bg-white animate-flicker"
+            style={{
+              left: `${star.x}%`,
+              top: `${star.y}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              animationDelay: `${star.delay}s`,
+              filter: "drop-shadow(0 0 2px rgba(255,255,255,0.8))",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
+        <div className="text-center">
+          <div className="mb-8">
+            <div className="relative inline-block">
+              <div className="absolute -inset-8 bg-gradient-to-r from-gray-600 via-white to-gray-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+
+              <img
+                src={sumit}
+                alt="Sumit Kumar"
+                className="relative w-48 h-48 rounded-full mx-auto mb-8 border-4 border-gray-600 shadow-2xl"
+              />
+            </div>
           </div>
-          <div className="w-[150px] md:w-[200px] h-[50px] rounded-full bg-[#111113] border border-white/10 flex justify-center items-center px-5 text-md md:text-xl cursor-pointer relative group overflow-hidden">
-            <div className="w-0 h-full absolute left-0 bg-white group-hover:w-full top-0 hover:w-full transition-all duration-500 z-0"></div>
-            <span className="relative z-10 group-hover:text-black transition-all duration-500 font-semibold">
-              Download CV
-            </span>
+
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+            Hi, I'm Sumit Kumar
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Professional <span className="text-white font-semibold">Coder</span>{" "}
+            &<span className="text-white font-semibold"> Video Editor</span>
+          </p>
+
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Computer Science Student at GLA University passionate about
+            problem-solving, development, and creating stunning visual content
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <button className="bg-white text-black hover:bg-gray-200 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+              View My Work
+            </button>
+            <button className="border-2 border-gray-600 hover:border-white hover:bg-gray-900 text-gray-300 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center gap-2 justify-center">
+              <FaDownload className="group-hover:animate-bounce" />
+              Download Resume
+            </button>
+          </div>
+
+          <div className="flex justify-center space-x-6">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
+              <FaGithub />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
+              <FaLinkedin />
+            </a>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>
-      <div className="w-full xl:w-1/2 h-full flex justify-center xl:justify-end items-center mb-10">
-        <div>
-          <img src={heroImg} className="w-[400px] rounded-xl mr-10" alt="" />
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
