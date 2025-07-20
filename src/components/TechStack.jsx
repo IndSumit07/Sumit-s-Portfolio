@@ -59,11 +59,7 @@ const TechStack = () => {
       icon: <FaJs className="text-white" />,
       category: "Programming",
     },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript className="text-white" />,
-      category: "Programming",
-    },
+
     {
       name: "Java",
       icon: <FaJava className="text-white" />,

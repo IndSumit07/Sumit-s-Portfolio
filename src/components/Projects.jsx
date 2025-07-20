@@ -8,7 +8,10 @@ import {
   FaStar,
   FaCalendar,
 } from "react-icons/fa";
-
+import ecommerce from "../../public/ecommerce.png";
+import conference from "../../public/conference.png";
+import hearwear from "../../public/hearwear.png";
+import cp from "../../public/cp.png";
 const Projects = () => {
   const [stars, setStars] = useState([]);
   const [filter, setFilter] = useState("All");
@@ -30,123 +33,51 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "HearWear",
+      description:
+        "Hearing aid for partial deaf and live translator and transcripter.",
+      image: hearwear,
+      technologies: ["React", "Tailwind", "APIs", "Mongo DB"],
+      github: "https://github.com/IndSumit07/HearWear-Frontend",
+      demo: "https://hear-wear.vercel.app/",
+      category: "Web Development",
+      featured: true,
+      date: "2024",
+    },
+    {
+      title: "Color-Palette-Generator",
+      description:
+        "A website that automatically generates attractive color palettes in a single click.",
+      image: cp,
+      technologies: ["React", "Tailwind CSS", "Vercel"],
+      github: "https://github.com/IndSumit07/color-palette-generator",
+      demo: "https://color-palette-generator-khaki.vercel.app/",
+      category: "Web Development",
+      featured: true,
+      date: "2024",
+    },
+    {
       title: "E-Commerce Platform",
       description:
         "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment integration, admin dashboard, and real-time inventory management.",
-      image: "/api/placeholder/400/250",
-      technologies: [
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Express",
-        "Tailwind CSS",
-        "Stripe API",
-      ],
-      github: "#",
-      demo: "#",
+      image: ecommerce,
+      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+      github: "https://github.com/IndSumit07/Project-Gravity",
+      demo: "https://gravity-alpha.vercel.app/",
       category: "Web Development",
       featured: true,
       date: "2024",
     },
     {
-      title: "Task Management App",
+      title: "International Conference Website",
       description:
-        "A responsive task management application with real-time updates, drag-and-drop functionality, team collaboration features, and deadline tracking system.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Firebase", "Material-UI", "Redux", "React DnD"],
-      github: "#",
-      demo: "#",
+        "A international conference website for Astrophysic Gravitational and Cosmology assigned by physics department of GLA University, Mathura.",
+      image: conference,
+      technologies: ["React", "Tailwind CSS", "Vercel"],
+      github: "https://github.com/IndSumit07/Conference-Website",
+      demo: "https://conference-website-ten.vercel.app/",
       category: "Web Development",
       featured: true,
-      date: "2024",
-    },
-    {
-      title: "Brand Promotional Video",
-      description:
-        "A professional promotional video for a tech startup including motion graphics, voiceover, color grading, and multi-platform optimization for social media.",
-      image: "/api/placeholder/400/250",
-      technologies: [
-        "Adobe Premiere Pro",
-        "After Effects",
-        "Audition",
-        "Photoshop",
-      ],
-      github: "#",
-      demo: "#",
-      category: "Video Editing",
-      featured: false,
-      date: "2024",
-    },
-    {
-      title: "Social Media Content Suite",
-      description:
-        "Series of engaging social media videos with animations, transitions, and brand consistency. Optimized for Instagram, YouTube, and TikTok platforms.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Premiere Pro", "After Effects", "Photoshop", "Canva"],
-      github: "#",
-      demo: "#",
-      category: "Video Editing",
-      featured: false,
-      date: "2024",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A comprehensive weather dashboard application with location-based forecasts, interactive charts, weather alerts, and responsive design for all devices.",
-      image: "/api/placeholder/400/250",
-      technologies: [
-        "React",
-        "Chart.js",
-        "OpenWeather API",
-        "Tailwind CSS",
-        "Geolocation API",
-      ],
-      github: "#",
-      demo: "#",
-      category: "Web Development",
-      featured: false,
-      date: "2023",
-    },
-    {
-      title: "Mobile Banking App",
-      description:
-        "A secure mobile banking application with biometric authentication, transaction history, real-time notifications, and modern UI/UX design.",
-      image: "/api/placeholder/400/250",
-      technologies: [
-        "React Native",
-        "Firebase",
-        "Redux",
-        "Expo",
-        "Biometric Auth",
-      ],
-      github: "#",
-      demo: "#",
-      category: "Mobile Development",
-      featured: true,
-      date: "2023",
-    },
-    {
-      title: "Algorithm Visualizer",
-      description:
-        "Interactive algorithm visualization tool for sorting and searching algorithms. Built to help students understand complex algorithms through visual representation.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "D3.js", "TypeScript", "Tailwind CSS"],
-      github: "#",
-      demo: "#",
-      category: "Web Development",
-      featured: false,
-      date: "2023",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "My personal portfolio website showcasing projects, skills, and experience. Built with modern React and features dark theme with interactive elements.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Tailwind CSS", "React Icons", "CSS Animations"],
-      github: "#",
-      demo: "#",
-      category: "Web Development",
-      featured: false,
       date: "2024",
     },
   ];
@@ -198,7 +129,7 @@ const Projects = () => {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center mb-12">
+        {/* <div className="flex justify-center mb-12">
           <div className="bg-gray-900/50 backdrop-blur-sm p-2 rounded-lg border border-gray-800">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -215,7 +146,7 @@ const Projects = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

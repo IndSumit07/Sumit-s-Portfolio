@@ -31,7 +31,7 @@ const Education = () => {
       degree: "Bachelor of Technology - Computer Science",
       institution: "GLA University",
       location: "Mathura, India",
-      year: "2023 - 2027",
+      year: "2024 - 2028",
       status: "Current",
       description:
         "Pursuing Computer Science Engineering with focus on software development, algorithms, and data structures. Actively participating in coding competitions and technical events.",
@@ -48,7 +48,7 @@ const Education = () => {
       degree: "Senior Secondary (12th)",
       institution: "Board School",
       location: "India",
-      year: "2022 - 2023",
+      year: "2023 - 2024",
       status: "Completed",
       description:
         "Completed with Science stream focusing on Mathematics, Physics, and Chemistry. Built strong foundation in logical thinking and analytical skills.",
@@ -65,7 +65,7 @@ const Education = () => {
       degree: "Secondary (10th)",
       institution: "Board School",
       location: "India",
-      year: "2020 - 2021",
+      year: "2021 - 2022",
       status: "Completed",
       description:
         "Strong foundation in core subjects with excellent academic performance. Developed interest in technology and problem-solving during this period.",

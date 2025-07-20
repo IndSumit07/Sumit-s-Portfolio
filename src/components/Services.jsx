@@ -57,19 +57,6 @@ const Services = () => {
       ],
     },
     {
-      icon: <FaMobile className="text-white" />,
-      title: "Mobile Development",
-      description:
-        "Cross-platform mobile app development using React Native and Flutter. Building native-like experiences for iOS and Android with optimal performance.",
-      features: [
-        "React Native",
-        "Cross-platform",
-        "Native Performance",
-        "App Store Deployment",
-        "Mobile UI/UX",
-      ],
-    },
-    {
       icon: <FaCloud className="text-white" />,
       title: "Cloud Solutions",
       description:
@@ -80,32 +67,6 @@ const Services = () => {
         "Scalable Architecture",
         "Security Implementation",
         "Performance Optimization",
-      ],
-    },
-    {
-      icon: <FaTools className="text-white" />,
-      title: "Technical Consulting",
-      description:
-        "Technical consultation for software projects, code reviews, and architecture planning. Helping businesses make informed technology decisions and optimize their development process.",
-      features: [
-        "Code Reviews",
-        "Architecture Planning",
-        "Technology Selection",
-        "Performance Optimization",
-        "Best Practices",
-      ],
-    },
-    {
-      icon: <FaCode className="text-white" />,
-      title: "Custom Development",
-      description:
-        "Custom software solutions tailored to specific business needs. From automation tools to complex web applications, delivering innovative solutions that drive growth.",
-      features: [
-        "Custom Solutions",
-        "Automation Tools",
-        "Integration Services",
-        "Maintenance Support",
-        "Scalable Systems",
       ],
     },
   ];

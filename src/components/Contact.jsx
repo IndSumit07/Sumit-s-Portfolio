@@ -53,7 +53,7 @@ const Contact = () => {
     {
       icon: <FaEnvelope className="text-white" />,
       title: "Email",
-      value: "sumit.kumar@gla.ac.in",
+      value: "sumitkumar692005@gmail.com",
       description: "Drop me a line anytime!",
       link: "mailto:sumit.kumar@gla.ac.in",
     },
@@ -77,38 +77,20 @@ const Contact = () => {
     {
       name: "LinkedIn",
       icon: <FaLinkedin className="text-white" />,
-      url: "#",
+      url: "https://www.linkedin.com/in/sumit-kumar-b0486631a/",
       description: "Connect professionally",
     },
     {
       name: "GitHub",
       icon: <FaGithub className="text-white" />,
-      url: "#",
+      url: "https://github.com/IndSumit07",
       description: "View my code repositories",
     },
     {
       name: "Instagram",
       icon: <FaInstagram className="text-white" />,
-      url: "#",
+      url: "https://www.instagram.com/codrsumit?igsh=MXJ6bnhucDJ3NXBjMg==",
       description: "Follow my journey",
-    },
-    {
-      name: "Twitter",
-      icon: <FaTwitter className="text-white" />,
-      url: "#",
-      description: "Tech thoughts and updates",
-    },
-    {
-      name: "Discord",
-      icon: <FaDiscord className="text-white" />,
-      url: "#",
-      description: "Join coding discussions",
-    },
-    {
-      name: "WhatsApp",
-      icon: <FaWhatsapp className="text-white" />,
-      url: "#",
-      description: "Quick messages",
     },
   ];
 

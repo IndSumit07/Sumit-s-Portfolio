@@ -82,17 +82,17 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6">
             <a
-              href="#"
+              href="https://github.com/IndSumit07"
               className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
               <FaGithub />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/sumit-kumar-b0486631a/"
               className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
               <FaLinkedin />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/codrsumit?igsh=MXJ6bnhucDJ3NXBjMg=="
               className="text-gray-400 hover:text-white text-2xl transition-all duration-300 hover:scale-125 transform">
               <FaInstagram />
             </a>
