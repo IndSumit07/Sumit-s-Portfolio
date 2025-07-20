@@ -83,7 +83,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="relative min-h-[80vh] py-20 overflow-hidden bg-black">
+      className="relative min-h-[80vh] py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-black">
       {/* Flickering Stars Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {stars.map((star) => (
@@ -103,143 +103,214 @@ const Education = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
             Education
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-2 sm:px-4">
             My academic journey and continuous learning path in Computer Science
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Fully Responsive Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-white via-gray-400 to-gray-600 rounded-full opacity-30"></div>
+          {/* Responsive Timeline Line */}
+          <div className="absolute left-4 sm:left-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-0.5 sm:w-1 h-full bg-gradient-to-b from-white via-gray-400 to-gray-600 rounded-full opacity-30"></div>
+
+          {/* Animated pulse line for large screens */}
+          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-32 bg-gradient-to-b from-white to-transparent rounded-full opacity-20 animate-pulse"></div>
 
           {education.map((edu, index) => (
             <div
               key={index}
-              className={`mb-16 flex items-center ${
-                index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-              }`}>
+              className="mb-8 sm:mb-12 lg:mb-16 xl:mb-20 relative">
+              {/* Responsive Layout Container */}
               <div
-                className={`w-5/12 ${
-                  index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                className={`lg:flex lg:items-center lg:justify-center ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}>
-                <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-all duration-300 group">
-                  <div className="flex items-center mb-4">
-                    <div className="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
-                      {edu.icon}
+                {/* Content Card - FULLY RESPONSIVE */}
+                <div
+                  className={`w-full lg:w-5/12 pl-12 sm:pl-16 lg:pl-0 ${
+                    index % 2 === 0
+                      ? "lg:pr-8 xl:pr-16 lg:text-right"
+                      : "lg:pl-8 xl:pl-16 lg:text-left"
+                  } transform transition-all duration-700 hover:scale-105`}>
+                  {/* Enhanced Responsive Card */}
+                  <div className="bg-gray-900/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-10 rounded-lg sm:rounded-xl lg:rounded-2xl border border-gray-800 hover:border-gray-600 transition-all duration-500 group shadow-xl hover:shadow-white/10">
+                    {/* Responsive Header */}
+                    <div
+                      className={`flex flex-col xs:flex-row items-start xs:items-center mb-4 sm:mb-6 space-y-2 xs:space-y-0 xs:space-x-3 ${
+                        index % 2 === 0
+                          ? "lg:justify-end lg:flex-row-reverse lg:space-x-reverse"
+                          : "lg:justify-start"
+                      }`}>
+                      <div className="flex items-center">
+                        <div className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl mr-2 xs:mr-3 sm:mr-4 group-hover:scale-110 lg:group-hover:scale-125 transition-transform duration-500 text-white">
+                          {edu.icon}
+                        </div>
+                        <span
+                          className={`px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-full text-xs xs:text-sm font-bold shadow-lg ${
+                            edu.status === "Current"
+                              ? "bg-gradient-to-r from-white to-gray-200 text-black animate-pulse"
+                              : "bg-gradient-to-r from-gray-800 to-gray-700 text-white border border-gray-600"
+                          }`}>
+                          {edu.status}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <span
-                        className={`px-4 py-2 rounded-full text-sm font-semibold ${
-                          edu.status === "Current"
-                            ? "bg-white text-black"
-                            : "bg-gray-800 text-white border border-gray-700"
-                        }`}>
-                        {edu.status}
+
+                    {/* Responsive Content */}
+                    <h3 className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+                      {edu.degree}
+                    </h3>
+                    <h4 className="text-base xs:text-lg sm:text-xl lg:text-2xl text-gray-300 mb-3 sm:mb-4 font-medium">
+                      {edu.institution}
+                    </h4>
+
+                    {/* Responsive Date and Location */}
+                    <div
+                      className={`flex flex-col xs:flex-row xs:items-center text-gray-400 mb-4 sm:mb-6 space-y-1 xs:space-y-0 ${
+                        index % 2 === 0
+                          ? "lg:justify-end lg:text-right"
+                          : "lg:justify-start lg:text-left"
+                      }`}>
+                      <div className="flex items-center">
+                        <FaCalendar className="mr-2 sm:mr-3 text-white text-sm sm:text-base" />
+                        <span className="font-semibold text-sm sm:text-base">
+                          {edu.year}
+                        </span>
+                      </div>
+                      <span className="hidden xs:inline xs:mx-2 sm:mx-4 text-gray-600">
+                        •
+                      </span>
+                      <span className="text-gray-500 ml-6 xs:ml-0 font-medium text-sm sm:text-base">
+                        {edu.location}
                       </span>
                     </div>
-                  </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {edu.degree}
-                  </h3>
-                  <h4 className="text-xl text-gray-300 mb-2">
-                    {edu.institution}
-                  </h4>
+                    <p className="text-sm xs:text-base sm:text-base lg:text-lg text-gray-300 mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
+                      {edu.description}
+                    </p>
 
-                  <div className="flex items-center text-gray-400 mb-4">
-                    <FaCalendar className="mr-2" />
-                    <span className="mr-4">{edu.year}</span>
-                    <span className="text-gray-500">• {edu.location}</span>
-                  </div>
-
-                  <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                    {edu.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-2">
-                    <h5 className="text-white font-semibold flex items-center">
-                      <FaBook className="mr-2" />
-                      Key Subjects
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.highlights.map((highlight, hIndex) => (
-                        <span
-                          key={hIndex}
-                          className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-700">
-                          {highlight}
-                        </span>
-                      ))}
+                    {/* Responsive Highlights */}
+                    <div className="space-y-3 sm:space-y-4">
+                      <h5
+                        className={`text-white font-bold flex items-center text-sm xs:text-base sm:text-lg ${
+                          index % 2 === 0
+                            ? "lg:justify-end"
+                            : "lg:justify-start"
+                        }`}>
+                        <FaBook className="mr-2 sm:mr-3 text-white text-sm sm:text-base" />
+                        Key Subjects
+                      </h5>
+                      <div
+                        className={`flex flex-wrap gap-2 sm:gap-3 ${
+                          index % 2 === 0
+                            ? "lg:justify-end"
+                            : "lg:justify-start"
+                        }`}>
+                        {edu.highlights.map((highlight, hIndex) => (
+                          <span
+                            key={hIndex}
+                            className="bg-gradient-to-r from-gray-800 to-gray-700 text-gray-200 px-2 xs:px-3 sm:px-4 py-1 xs:py-1.5 sm:py-2 rounded-full text-xs xs:text-sm border border-gray-600 hover:border-gray-500 transition-colors duration-300 shadow-lg">
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Timeline Circle */}
-              <div className="w-2/12 flex justify-center">
-                <div className="relative">
-                  <div className="w-8 h-8 bg-white rounded-full border-4 border-black shadow-lg flex items-center justify-center">
-                    <div className="w-3 h-3 bg-black rounded-full"></div>
+                {/* Responsive Timeline Circle */}
+                <div className="absolute left-4 sm:left-6 lg:relative lg:left-auto lg:w-2/12 lg:flex lg:justify-center">
+                  <div className="relative">
+                    {/* Responsive Circle */}
+                    <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-white rounded-full border-2 xs:border-3 sm:border-4 lg:border-6 border-black shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-black rounded-full"></div>
+                    </div>
+
+                    {/* Enhanced Current Status Animation */}
+                    {edu.status === "Current" && (
+                      <>
+                        <div className="absolute -inset-1 xs:-inset-1.5 sm:-inset-2 lg:-inset-4 bg-white rounded-full animate-ping opacity-30"></div>
+                        <div className="absolute -inset-0.5 xs:-inset-1 sm:-inset-1 lg:-inset-2 bg-white rounded-full animate-pulse opacity-20"></div>
+                      </>
+                    )}
+
+                    {/* Connecting Line to Card (Large Screens Only) */}
+                    <div
+                      className={`hidden lg:block absolute top-1/2 ${
+                        index % 2 === 0 ? "left-full" : "right-full"
+                      } w-8 xl:w-16 h-0.5 bg-gradient-to-${
+                        index % 2 === 0 ? "r" : "l"
+                      } from-white to-transparent opacity-30`}></div>
                   </div>
-                  {edu.status === "Current" && (
-                    <div className="absolute -inset-2 bg-white rounded-full animate-ping opacity-30"></div>
-                  )}
                 </div>
+
+                {/* Spacer for desktop layout */}
+                <div className="hidden lg:block lg:w-5/12"></div>
               </div>
 
-              <div className="w-5/12"></div>
+              {/* Responsive Year Label (Large Screens Only) */}
+              <div
+                className={`hidden xl:block absolute top-0 ${
+                  index % 2 === 0 ? "left-8" : "right-8"
+                } bg-gradient-to-r from-gray-800 to-gray-700 text-white px-3 py-1.5 rounded-full text-sm font-bold shadow-lg border border-gray-600`}>
+                {edu.year.split(" - ")[0]}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Section - Academic Achievements */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <FaAward className="text-white text-3xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">Academic Focus</h3>
+        {/* Responsive Bottom Section */}
+        <div className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24 text-center">
+          <div className="bg-gray-900/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 lg:p-12 rounded-lg sm:rounded-xl lg:rounded-2xl border border-gray-800 max-w-5xl mx-auto shadow-2xl">
+            <div className="flex flex-col xs:flex-row items-center justify-center mb-4 xs:mb-6 lg:mb-8">
+              <FaAward className="text-white text-2xl xs:text-3xl lg:text-4xl mb-2 xs:mb-0 xs:mr-3 sm:mr-4" />
+              <h3 className="text-xl xs:text-2xl lg:text-3xl font-bold text-white text-center">
+                Academic Excellence
+              </h3>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            <p className="text-gray-300 text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 px-2">
               Currently pursuing Computer Science Engineering at GLA University
               with a strong focus on software development, algorithms, and
               emerging technologies. My academic journey has been driven by
               curiosity and a passion for solving complex problems through code.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaStar className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105">
+                <FaStar className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
+                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
                   Problem Solving
                 </h4>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
                   Strong focus on algorithmic thinking and competitive
-                  programming
+                  programming excellence
                 </p>
               </div>
 
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaGraduationCap className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">Development</h4>
-                <p className="text-gray-400 text-sm">
+              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105">
+                <FaGraduationCap className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
+                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
+                  Development
+                </h4>
+                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
                   Hands-on experience with modern web technologies and
-                  frameworks
+                  cutting-edge frameworks
                 </p>
               </div>
 
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaBook className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
+              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 sm:col-span-2 lg:col-span-1">
+                <FaBook className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
+                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
                   Continuous Learning
                 </h4>
-                <p className="text-gray-400 text-sm">
-                  Always exploring new technologies and industry best practices
+                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
+                  Always exploring innovative technologies and industry best
+                  practices
                 </p>
               </div>
             </div>
