@@ -162,23 +162,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Section - Passion Statement */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-4">
-              <FaHeart className="text-white text-2xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">My Passion</h3>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              I'm driven by the endless possibilities that technology offers.
-              Whether it's building innovative web applications, solving complex
-              algorithms, or creating stunning visual content, I'm always eager
-              to learn, grow, and push the boundaries of what's possible. My
-              goal is to use technology to make a positive impact on the world.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

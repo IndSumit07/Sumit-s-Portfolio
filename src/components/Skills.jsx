@@ -135,47 +135,6 @@ const Skills = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Section - Technical Focus */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <FaCode className="text-white text-3xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">
-                Technical Expertise
-              </h3>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              My skills span across multiple domains of technology, from
-              full-stack web development to professional video editing. I'm
-              constantly learning and adapting to new technologies, frameworks,
-              and tools to stay current with industry trends.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaCode className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Development Focus
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Full-stack development with modern frameworks and best
-                  practices
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaVideo className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Creative Skills
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Professional video editing and motion graphics expertise
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

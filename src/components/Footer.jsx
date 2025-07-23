@@ -230,8 +230,8 @@ const Footer = () => {
               </p>
               <p className="text-gray-400 text-xs sm:text-sm flex items-center">
                 Made with{" "}
-                <FaHeart className="text-gray-500 mx-1 animate-pulse" /> by a
-                passionate developer
+                <FaHeart className="text-gray-500 mx-1 animate-pulse" /> by
+                Sumit Kumar
               </p>
             </div>
 

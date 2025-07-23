@@ -213,61 +213,6 @@ const CodingProfiles = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Section - RESPONSIVE FIXES */}
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 md:mb-6">
-              <FaCode className="text-white text-2xl sm:text-3xl mb-2 sm:mb-0 sm:mr-3" />
-              <h3 className="text-xl sm:text-2xl font-bold text-white text-center">
-                Competitive Programming Journey
-              </h3>
-            </div>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 md:mb-6 px-2">
-              As a Computer Science student at GLA University, competitive
-              programming has been instrumental in sharpening my problem-solving
-              skills and algorithmic thinking. Each platform offers unique
-              challenges that have helped me grow as a developer, from mastering
-              data structures to optimizing complex algorithms under time
-              constraints.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
-              <div className="bg-gray-800/50 p-4 md:p-6 rounded-lg border border-gray-700">
-                <FaChartLine className="text-white text-xl sm:text-2xl mb-2 sm:mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">
-                  Problem Solving
-                </h4>
-                <p className="text-gray-400 text-xs sm:text-sm">
-                  Consistent practice across multiple platforms to strengthen
-                  algorithmic thinking
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-4 md:p-6 rounded-lg border border-gray-700">
-                <FaTrophy className="text-white text-xl sm:text-2xl mb-2 sm:mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">
-                  Contest Participation
-                </h4>
-                <p className="text-gray-400 text-xs sm:text-sm">
-                  Regular participation in coding contests to improve speed and
-                  accuracy
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-4 md:p-6 rounded-lg border border-gray-700 sm:col-span-2 lg:col-span-1">
-                <FaAward className="text-white text-xl sm:text-2xl mb-2 sm:mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">
-                  Continuous Growth
-                </h4>
-                <p className="text-gray-400 text-xs sm:text-sm">
-                  Always learning new algorithms and data structures to tackle
-                  complex problems
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

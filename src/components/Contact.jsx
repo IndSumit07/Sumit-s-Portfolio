@@ -270,52 +270,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-
-        {/* Bottom Section - Availability & Response Time */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <FaEnvelope className="text-white text-3xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">
-                Let's Build Something Amazing
-              </h3>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              I'm currently available for freelance projects, internships, and
-              collaborative opportunities. As a dedicated Computer Science
-              student, I'm always eager to work on challenging projects that
-              push the boundaries of technology and creativity.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaPaperPlane className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Quick Response
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  I typically respond within 24 hours
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaPhone className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">Available</h4>
-                <p className="text-gray-400 text-sm">
-                  Open to new opportunities and collaborations
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaMapMarkerAlt className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">Location</h4>
-                <p className="text-gray-400 text-sm">
-                  Based in Mathura, India (Remote work preferred)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

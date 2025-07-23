@@ -135,56 +135,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Section - Service Philosophy */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <FaRocket className="text-white text-3xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">My Approach</h3>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              As a Computer Science student at GLA University, I combine
-              academic knowledge with practical experience to deliver
-              high-quality solutions. I believe in writing clean, maintainable
-              code and creating user-centric designs that solve real-world
-              problems. Every project is an opportunity to learn, grow, and
-              exceed expectations.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaCog className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Technical Excellence
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Modern technologies and best practices for optimal performance
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaChartLine className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Growth Focused
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Solutions designed to scale with your business needs
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaRocket className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">
-                  Innovation Driven
-                </h4>
-                <p className="text-gray-400 text-sm">
-                  Cutting-edge solutions using the latest technologies
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

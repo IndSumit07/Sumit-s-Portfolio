@@ -263,59 +263,6 @@ const Education = () => {
             </div>
           ))}
         </div>
-
-        {/* Responsive Bottom Section */}
-        <div className="mt-12 sm:mt-16 lg:mt-20 xl:mt-24 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-4 xs:p-6 sm:p-8 lg:p-12 rounded-lg sm:rounded-xl lg:rounded-2xl border border-gray-800 max-w-5xl mx-auto shadow-2xl">
-            <div className="flex flex-col xs:flex-row items-center justify-center mb-4 xs:mb-6 lg:mb-8">
-              <FaAward className="text-white text-2xl xs:text-3xl lg:text-4xl mb-2 xs:mb-0 xs:mr-3 sm:mr-4" />
-              <h3 className="text-xl xs:text-2xl lg:text-3xl font-bold text-white text-center">
-                Academic Excellence
-              </h3>
-            </div>
-            <p className="text-gray-300 text-sm xs:text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 px-2">
-              Currently pursuing Computer Science Engineering at GLA University
-              with a strong focus on software development, algorithms, and
-              emerging technologies. My academic journey has been driven by
-              curiosity and a passion for solving complex problems through code.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105">
-                <FaStar className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
-                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
-                  Problem Solving
-                </h4>
-                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
-                  Strong focus on algorithmic thinking and competitive
-                  programming excellence
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105">
-                <FaGraduationCap className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
-                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
-                  Development
-                </h4>
-                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
-                  Hands-on experience with modern web technologies and
-                  cutting-edge frameworks
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-4 xs:p-6 lg:p-8 rounded-lg sm:rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 sm:col-span-2 lg:col-span-1">
-                <FaBook className="text-white text-xl xs:text-2xl lg:text-3xl mb-3 sm:mb-4 mx-auto" />
-                <h4 className="text-white font-bold mb-2 sm:mb-3 text-base xs:text-lg lg:text-xl">
-                  Continuous Learning
-                </h4>
-                <p className="text-gray-400 text-xs xs:text-sm lg:text-base">
-                  Always exploring innovative technologies and industry best
-                  practices
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -215,52 +215,6 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Section - Project Philosophy */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-lg border border-gray-800 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <FaCode className="text-white text-3xl mr-3" />
-              <h3 className="text-2xl font-bold text-white">
-                Project Philosophy
-              </h3>
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Each project represents a learning journey and a step forward in
-              my development as a Computer Science student. I focus on building
-              practical solutions that solve real problems while incorporating
-              modern technologies and best practices. From web applications to
-              mobile apps and creative video content, every project is an
-              opportunity to grow and innovate.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaCode className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">Clean Code</h4>
-                <p className="text-gray-400 text-sm">
-                  Focus on maintainable, scalable, and well-documented code
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaEye className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">User-Centric</h4>
-                <p className="text-gray-400 text-sm">
-                  Designing with user experience and accessibility in mind
-                </p>
-              </div>
-
-              <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-                <FaStar className="text-white text-2xl mb-3 mx-auto" />
-                <h4 className="text-white font-semibold mb-2">Innovation</h4>
-                <p className="text-gray-400 text-sm">
-                  Exploring new technologies and creative solutions
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
